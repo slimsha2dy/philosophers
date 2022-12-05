@@ -6,12 +6,11 @@
 /*   By: jfrusciante <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 00:32:32 by jfruscia          #+#    #+#             */
-/*   Updated: 2022/12/05 01:29:59 by jfruscia         ###   ########.fr       */
+/*   Updated: 2022/12/05 15:15:24 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
 
 long long	get_time_ms(void)
 {

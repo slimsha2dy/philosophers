@@ -6,7 +6,7 @@
 /*   By: jfrusciante <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 23:17:22 by jfruscia          #+#    #+#             */
-/*   Updated: 2022/12/05 01:44:47 by jfruscia         ###   ########.fr       */
+/*   Updated: 2022/12/05 15:53:39 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ typedef struct s_desk
 {
 	t_philosopher	*phils;
 	pthread_mutex_t	*forks;
-	pthread_mutex_t	info_mutex;
 	pthread_mutex_t	desk_die_mutex;
 	pthread_mutex_t	print_mutex;
 	int				phils_num;

@@ -6,13 +6,19 @@
 #    By: jfrusciante <marvin@42.fr>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 01:05:52 by jfruscia          #+#    #+#              #
-#    Updated: 2022/12/05 01:34:52 by jfruscia         ###   ########.fr        #
+#    Updated: 2022/12/05 16:51:42 by hwichoi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 CC = cc
-CFLAGS = -Wextra
+CFLAGS = -Wall -Wextra -Werror -O3
+
+# thread
+# CFLAGS = -Wall -Wextra -Werror -O3 -fsanitize=thread
+
+# address
+# CFLAGS = -Wall -Wextra -Werror -O3 -fsanitize=address
 
 AR = ar rcs
 

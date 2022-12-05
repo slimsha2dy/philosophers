@@ -6,7 +6,7 @@
 /*   By: jfrusciante <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 00:12:46 by jfruscia          #+#    #+#             */
-/*   Updated: 2022/12/05 01:29:24 by jfruscia         ###   ########.fr       */
+/*   Updated: 2022/12/05 15:54:36 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,6 @@ void	bye_philosophers(t_desk *desk, pthread_t *threads)
 	}
 	free(desk -> phils);
 	pthread_mutex_destroy(&desk -> desk_die_mutex);
-	pthread_mutex_destroy(&desk -> info_mutex);
 	pthread_mutex_destroy(&desk -> print_mutex);
 	free(desk);
 }

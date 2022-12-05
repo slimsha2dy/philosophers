@@ -6,7 +6,7 @@
 /*   By: jfrusciante <marvin@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 23:23:33 by jfruscia          #+#    #+#             */
-/*   Updated: 2022/12/05 01:44:13 by jfruscia         ###   ########.fr       */
+/*   Updated: 2022/12/05 16:19:11 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,7 @@ t_desk	*init_desk(int ac, const char **av)
 		return (NULL);
 	i = 0;
 	while (i < desk -> phils_num)
-		pthread_mutex_init(&desk -> forks[i++], NULL);
-	pthread_mutex_init(&(desk -> info_mutex), NULL);
+		pthread_mutex_init(&(desk -> forks[i++]), NULL);
 	pthread_mutex_init(&(desk -> desk_die_mutex), NULL);
 	pthread_mutex_init(&(desk -> print_mutex), NULL);
 	return (desk);
@@ -72,7 +71,7 @@ t_philosopher	*init_phils(t_desk *desk)
 	while (i < phils_num)
 	{
 		phils[i].desk = desk;
-		phils[i].left_fork = &desk -> forks[i % phils_num];
+		phils[i].left_fork = &desk -> forks[i];
 		phils[i].right_fork = &desk -> forks[(i + 1) % phils_num];
 		phils[i].time_to_die = desk -> time_to_die;
 		phils[i].time_to_eat = desk -> time_to_eat;
@@ -122,7 +121,6 @@ int	single_phil_case(t_desk *desk)
 	pthread_mutex_destroy(&desk -> forks[0]);
 	free(desk -> phils);
 	pthread_mutex_destroy(&desk -> desk_die_mutex);
-	pthread_mutex_destroy(&desk -> info_mutex);
 	pthread_mutex_destroy(&desk -> print_mutex);
 	return (1);
 }
